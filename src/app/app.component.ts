@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { USERS } from './data/user_data.js';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +6,11 @@ import { USERS } from './data/user_data.js';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  users = USERS;
-  title = 'admin-panel';
-  constructor(){
-  	console.log(USERS);
+  title: string = 'admin-panel';
+  userId: string = null;
+
+  showDetails(userId: string): void {
+  	this.userId = userId;
   }
+
 }

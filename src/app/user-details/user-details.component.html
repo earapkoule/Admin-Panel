@@ -1,3 +1,24 @@
-<div class="container">
-	<div *ngFor="let user of users">{{user.id}}</div>
-</div>
+<form>
+	<div class="detail">
+		<h5>Name</h5>
+		<input type="text" name="name" placeholder="Enter name" [(ngModel)]="newUser.name"/>
+	</div>
+	<div class="detail">
+		<h5>Email address</h5>
+		<input type="text" name="email" placeholder="Enter email address" [(ngModel)]="newUser.email"/>
+	</div>
+	<div class="detail">
+		<h5>Phone</h5>
+		<input type="text" name="phone" placeholder="Enter phone" [(ngModel)]="newUser.phone"/>
+	</div>
+	<div class="detail">
+		<h5>Address</h5>
+		<input type="text" name="address" placeholder="Enter address" [(ngModel)]="newUser.address"/>
+	</div>
+	<div class="detail">
+		<h5>Company</h5>
+		<input type="text" name="company" placeholder="Enter company" [(ngModel)]="newUser.company"/>
+	</div>
+	<button class="cancel-button" (click)="cancelChanges()">Cancel</button>
+	<button class="save-button" (click)="saveChanges()" [disabled]="isSaveDisabled">Save</button>
+</form>
