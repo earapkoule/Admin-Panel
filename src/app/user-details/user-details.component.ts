@@ -1,5 +1,6 @@
 import { Component, Input, SimpleChanges, OnChanges, OnInit } from '@angular/core';
 import { UsersService } from '../services/users.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-details',
@@ -8,7 +9,14 @@ import { UsersService } from '../services/users.service';
 })
 export class AppUserDetails implements OnChanges, OnInit {
 	newUser: any;
-	isSaveDisabled: boolean = false;
+	userForm = new FormGroup({
+		name: new FormControl(''),
+		email: new FormControl(''),
+		phone: new FormControl(''),
+	    address: new FormControl(''),
+	    company: new FormControl('')
+	});
+
 	@Input("userId") userId: string = null;
 
   	constructor(private usersService: UsersService) {}

@@ -1,0 +1,20 @@
+.page-container {
+	background-color: whitesmoke;
+}
+
+.center-box {
+	margin: auto;
+	width: 70%;
+	background-color: #fff;
+}
+
+.right-panel {
+	display: inline-block;
+	width: 60%;
+}
+
+.left-panel {
+	display: inline-block;
+	width: 40%;
+	margin: auto;
+}

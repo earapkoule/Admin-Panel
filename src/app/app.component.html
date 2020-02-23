@@ -1,8 +1,10 @@
-<div class="row">
-	<div class="col-4">
-	  <app-users-list (selectUser)="showDetails($event)"></app-users-list>
-	</div>
-	<div class="col-8">
-	  <app-user-details [userId]="userId"></app-user-details>
+<div class="page-container">
+	<div class="center-box">
+		<div class="right-panel">
+		  <app-users-list (selectUser)="showDetails($event)"></app-users-list>
+		</div>
+		<div class="left-panel">
+		  <app-user-details [userId]="userId"></app-user-details>
+		</div>
 	</div>
 </div>

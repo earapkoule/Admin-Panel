@@ -1,0 +1,38 @@
+.detail {
+	margin: 1em;
+}
+
+.cancel-button {
+	float: right;
+	margin: 1em;
+	padding: 0.5em;
+	border-radius: 10%;
+	background-color: #f7f7f7;
+	border: 1px #f7f7f7 solid;
+	transition-duration: 0.4s;
+}
+
+.cancel-button:hover {
+	background-color: #808285;
+	color: #fff;
+}
+
+.save-button {
+	float: right;
+	margin: 1em;
+	padding: 0.5em;
+	border-radius: 10%;
+	background-color: #1b68b3;
+	color: #fff;
+	border: 1px #1b68b3 solid;
+	transition-duration: 0.4s;
+}
+
+.save-button:hover {
+	background-color: #f7f7f7;
+	color: #1b68b3;
+}
+
+input {
+	width: 100%;
+}
