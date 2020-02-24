@@ -12,4 +12,4 @@ ng serve
 
 To build:
 
-ng build -prod
+ng build --prod
