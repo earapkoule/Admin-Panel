@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { AppUsersList } from './users-list/users-list.component';
-import { AppUserDetails } from './user-details/user-details.component';
+import { AppUsersListComponent } from './users-list/users-list.component';
+import { AppUserDetailsComponent } from './user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppUsersList,
-    AppUserDetails
+    AppUsersListComponent,
+    AppUserDetailsComponent
   ],
   imports: [
     BrowserModule,

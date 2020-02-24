@@ -1,27 +1,59 @@
 .user-photo {
     border-radius: 100%;
-    width: 50%;
+    width: 60px;
+}
+
+.user-email, .user-name {
+	display: none;
 }
 
 .image {
 	display: inline-block;
-	width: 30%;
+	margin-right: 20px;
 }
 
-.username {
-	display: block;
+.user-details {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.useremail {
-	display: block;
+.users-list-item {
+	display: flex;
+	padding: 5px 20px;
 }
 
-.userdetails {
-	width: 70%;
-	display: inline-block;
-	vertical-align: center;
+.users-list-item:hover {
+	background-color: #e8e8e8;
 }
 
-.users-panel {
-	margin: 1em;
+.users-list-item.selected {
+	background-color: #1b68b3;
+	color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+	.user-name {
+		display: block;
+		font-weight: 600;
+	}
+
+	.user-email {
+		display: block;
+	}
+
+	.user-details {
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	}
+
+	.image {
+		display: inline-block;
+		margin-right: 20px;
+	}
+
+	.users-list-item {
+		display: flex;
+	}
 }

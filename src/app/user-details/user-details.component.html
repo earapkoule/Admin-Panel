@@ -1,24 +1,42 @@
 <form [formGroup]="userForm">
 	<div class="detail">
-		<h5>Name</h5>
-		<input type="text" formControlName="name" placeholder="Enter name" [(ngModel)]="newUser.name"/>
+		<label>
+      Name
+      <input type="text" formControlName="name" placeholder="Enter name"/>
+    </label>
 	</div>
 	<div class="detail">
-		<h5>Email address</h5>
-		<input type="text" formControlName="email" placeholder="Enter email address" [(ngModel)]="newUser.email"/>
+		<label>
+      Email address
+      <input type="text" formControlName="email" placeholder="Enter email address"/>
+    </label>
 	</div>
 	<div class="detail">
-		<h5>Phone</h5>
-		<input type="text" formControlName="phone" placeholder="Enter phone" [(ngModel)]="newUser.phone"/>
+		<label>
+      Phone
+      <input type="text" formControlName="phone" placeholder="Enter phone"/>
+    </label>
 	</div>
 	<div class="detail">
-		<h5>Address</h5>
-		<input type="text" formControlName="address" placeholder="Enter address" [(ngModel)]="newUser.address"/>
+		<label>
+      Address
+      <input type="text" formControlName="address" placeholder="Enter address"/>
+    </label>
 	</div>
 	<div class="detail">
-		<h5>Company</h5>
-		<input type="text" formControlName="company" placeholder="Enter company" [(ngModel)]="newUser.company"/>
+		<label>
+      Company
+      <input type="text" formControlName="company" placeholder="Enter company"/>
+    </label>
 	</div>
-	<button class="save-button" (click)="saveChanges()" [disabled]="userForm.dirty">Save</button>
-	<button class="cancel-button" (click)="cancelChanges()" [hidden]="!userForm.dirty">Cancel</button>
+	<button class="save-button"
+    (click)="saveChanges()"
+    [disabled]="!userForm.dirty">
+    Save
+  </button>
+	<button class="cancel-button"
+    *ngIf="userForm.dirty"
+    (click)="cancelChanges()">
+    Cancel
+  </button>
 </form>

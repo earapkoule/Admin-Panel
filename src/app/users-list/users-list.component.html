@@ -1,9 +1,9 @@
-<div *ngFor="let user of users" (click)="selectUser(user.id)" class="users-panel">
+<div class="users-list-item" *ngFor="let user of users" (click)="selectUser(user.id)" [ngClass]="{'selected': user.id === userId}">
 	<div class="image">
 		<img class="user-photo" src="{{user.photo}}">
 	</div>
-	<div class="userdetails">
-		<div class="username">{{user.name}}</div>
-		<div class="useremail">{{user.email}}</div>
+	<div class="user-details">
+		<div class="user-name">{{user.name}}</div>
+		<div class="user-email">{{user.email}}</div>
 	</div>
 </div>

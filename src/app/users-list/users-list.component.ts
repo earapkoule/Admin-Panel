@@ -6,17 +6,20 @@ import { UsersService } from '../services/users.service';
   templateUrl: './users-list.component.html',
   styleUrls: ['./users-list.component.css']
 })
-export class AppUsersList implements OnInit {
+export class AppUsersListComponent implements OnInit {
 	users: any[];
+  userId: string;
 	@Output("selectUser") userSelected: EventEmitter<string> = new EventEmitter();
 
-  	constructor(private usersService: UsersService) {}
+	constructor(private usersService: UsersService) {}
 
-  	ngOnInit() {
-  		this.users = this.usersService.users;
-  	}
+	ngOnInit() {
+		this.users = this.usersService.users;
+    this.userId = this.usersService.users[0].id;
+	}
 
 	selectUser(userId: string): void {
+    this.userId = userId;
 		this.userSelected.emit(userId);
 	}
 }

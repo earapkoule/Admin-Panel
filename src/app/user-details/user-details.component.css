@@ -11,10 +11,14 @@
 	border: 1px #f7f7f7 solid;
 	transition-duration: 0.4s;
 }
-
 .cancel-button:hover {
 	background-color: #808285;
 	color: #fff;
+}
+.cancel-button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  border: 1px #ccc solid;
 }
 
 .save-button {
@@ -27,12 +31,24 @@
 	border: 1px #1b68b3 solid;
 	transition-duration: 0.4s;
 }
-
 .save-button:hover {
 	background-color: #f7f7f7;
 	color: #1b68b3;
 }
+.save-button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  border: 1px #ccc solid;
+}
 
 input {
 	width: 100%;
+	border: 1px #ececec solid;
+	border-radius: 5%;
+	padding: 5px 10px;
+	margin: 10px 0;
+}
+
+label {
+	color: grey;
 }
