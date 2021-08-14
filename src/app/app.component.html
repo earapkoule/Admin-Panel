@@ -4,7 +4,8 @@
 		  <app-users-list (selectUser)="showDetails($event)"></app-users-list>
 		</div>
 		<div class="right-panel">
-		  <app-user-details [userId]="userId"></app-user-details>
+		  <app-user-details></app-user-details>
+		  <button (click)="fetchData()">Submit</button>
 		</div>
 	</div>
 </div>
