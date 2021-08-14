@@ -1,35 +1,40 @@
-<form [formGroup]="userForm">
+<!-- <form [formGroup]="userForm"> -->
 	<div class="detail">
 		<label>
       Name
-      <input type="text" formControlName="name" placeholder="Enter name"/>
+      <!-- <input type="text" formControlName="name" placeholder="Enter name"/> -->
+      <input [placeholder]="(earthquakes.length > 0) ? earthquakes[0].depth : ''" />
     </label>
 	</div>
 	<div class="detail">
 		<label>
       Email address
-      <input type="text" formControlName="email" placeholder="Enter email address"/>
+      <!-- <input type="text" formControlName="email" placeholder="Enter email address"/> -->
+      <input />
     </label>
 	</div>
 	<div class="detail">
 		<label>
       Phone
-      <input type="text" formControlName="phone" placeholder="Enter phone"/>
+      <!-- <input type="text" formControlName="phone" placeholder="Enter phone"/> -->
+      <input />
     </label>
 	</div>
 	<div class="detail">
 		<label>
       Address
-      <input type="text" formControlName="address" placeholder="Enter address"/>
+      <!-- <input type="text" formControlName="address" placeholder="Enter address"/> -->
+      <input />
     </label>
 	</div>
 	<div class="detail">
 		<label>
       Company
-      <input type="text" formControlName="company" placeholder="Enter company"/>
+      <!-- <input type="text" formControlName="company" placeholder="Enter company"/> -->
+      <input />
     </label>
 	</div>
-	<button class="save-button"
+	<!-- <button class="save-button"
     (click)="saveChanges()"
     [disabled]="!userForm.dirty">
     Save
@@ -38,5 +43,5 @@
     *ngIf="userForm.dirty"
     (click)="cancelChanges()">
     Cancel
-  </button>
-</form>
+  </button> -->
+<!-- </form> -->
