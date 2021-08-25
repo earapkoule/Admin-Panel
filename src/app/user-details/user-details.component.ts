@@ -1,19 +1,19 @@
-import { Component, Input, SimpleChanges, OnChanges } from '@angular/core';
-import { UsersService } from '../services/users.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, Input, SimpleChanges, OnChanges } from "@angular/core";
+import { UsersService } from "../services/users.service";
+import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
-  selector: 'app-user-details',
-  templateUrl: './user-details.component.html',
-  styleUrls: ['./user-details.component.css']
+  selector: "app-user-details",
+  templateUrl: "./user-details.component.html",
+  styleUrls: ["./user-details.component.css"],
 })
 export class AppUserDetailsComponent implements OnChanges {
   userForm = new FormGroup({
-    name: new FormControl(''),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    address: new FormControl(''),
-    company: new FormControl('')
+    name: new FormControl(""),
+    email: new FormControl(""),
+    phone: new FormControl(""),
+    address: new FormControl(""),
+    company: new FormControl(""),
   });
 
   @Input() userId: string = null;
@@ -21,34 +21,31 @@ export class AppUserDetailsComponent implements OnChanges {
   constructor(private usersService: UsersService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
     const selectedUser = this.findUserById(changes.userId.currentValue);
-    if (selectedUser != null) {
-      this.fillForm(selectedUser);
-    }
+    if (selectedUser != null) this.fillForm(selectedUser);
   }
 
   cancelChanges() {
-    const selectedUserIndex: number = this.usersService.users.findIndex((user) => {
-      return user.id === this.userId;
-    });
-    this.userForm.markAsPristine();  // Resets the dirty property of the form
+    const selectedUserIndex: number = this.usersService.users.findIndex(
+      (user) => user.id === this.userId
+    );
+    this.userForm.markAsPristine(); // Resets the dirty property of the form
     this.fillForm(this.usersService.users[selectedUserIndex]);
   }
 
   saveChanges() {
-    const selectedUserIndex: number = this.usersService.users.findIndex((user) => {
-      return user.id === this.userId;
-    });
+    const selectedUserIndex: number = this.usersService.users.findIndex(
+      (user) => user.id === this.userId
+    );
 
-    this.userForm.markAsPristine();  // Resets the dirty property of the form
+    this.userForm.markAsPristine(); // Resets the dirty property of the form
     this.usersService.users[selectedUserIndex] = {
       ...this.usersService.users[selectedUserIndex], // The id remains the same
       name: this.userForm.controls.name.value,
       email: this.userForm.controls.email.value,
       phone: this.userForm.controls.phone.value,
       address: this.userForm.controls.address.value,
-      company: this.userForm.controls.company.value
+      company: this.userForm.controls.company.value,
     };
   }
 
@@ -60,11 +57,9 @@ export class AppUserDetailsComponent implements OnChanges {
     this.userForm.controls.company.setValue(user.company);
   }
 
-  findUserById(userId: string): any {
+  findUserById(userId: string) {
     for (const user of this.usersService.users) {
-      if (user.id === userId) {
-        return user;
-      }
+      if (user.id === userId) return user;
     }
     return null;
   }
